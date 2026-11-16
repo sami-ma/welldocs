@@ -3,3 +3,7 @@ SELECT * FROM pg_catalog.pg_database
 ORDER BY oid ASC ;
 
 select relfilenode, relpages, reltuples from pg_class where relname = 'emp';
+
+
+create schema mytest authorization postgres;
+
