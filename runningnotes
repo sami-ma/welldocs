@@ -25,3 +25,18 @@ insert into t3 (name) values ('aaa');
 insert into t3 (name) values ('bbb');
 insert into t3 (name) values ('ccc');
 insert into t3 (name) values ('ddd');
+
+
+sequnece:
+
+create table t5 (id int, name varchar(10))
+
+CREATE SEQUENCE  test_seq
+   AS  INT  
+   INCREMENT BY 2
+   MAXVALUE 1000
+   START WITH 50
+   CACHE 5
+    CYCLE 
+  OWNED BY t5.id 
+
