@@ -11,3 +11,4 @@ create table t1 (id int, name text);
 
 show search_path
 
+set search_path = mytest, public;
