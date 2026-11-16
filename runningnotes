@@ -61,3 +61,17 @@ CREATE RULE sal_trace AS
     INSERT INTO sal_trace_tbl 
     VALUES (current_user(), now(), old.empno, old.sal, new.sal);
 
+Example of Rule for a trace_table:
+
+create table public.trace_sal (userid varchar(20), event_time timestamp, 
+empno int, old_sal numeric(10,2), new_sal numeric(10,2)); 
+
+CREATE RULE trace_sal_rule AS
+    ON UPDATE TO public.emp
+    DO ALSO
+    INSERT INTO public.trace_sal 
+    VALUES (current_user, now(), 
+      old.empno, old.sal, new.sal);
+update emp set sal = sal + 100 where ename = 'FORD';
+select * From public.trace_sal
+
