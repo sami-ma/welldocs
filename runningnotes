@@ -51,3 +51,13 @@ insert into t5  values (nextval('test_seq'),'bbb');
 insert into t5  values (nextval('test_seq'),'ccc');
 insert into t5  values (nextval('test_seq'),'ddd');
 
+
+
+RULE:
+
+CREATE RULE sal_trace AS
+    ON UPDATE TO emp
+    DO ALSO
+    INSERT INTO sal_trace_tbl 
+    VALUES (current_user(), now(), old.empno, old.sal, new.sal);
+
