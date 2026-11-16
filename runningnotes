@@ -28,13 +28,7 @@ insert into t3 (name) values ('ddd');
 
 
 
-RULE:
 
-CREATE RULE sal_trace AS
-    ON UPDATE TO emp
-    DO ALSO
-    INSERT INTO sal_trace_tbl 
-    VALUES (current_user(), now(), old.empno, old.sal, new.sal);
 
 
 
