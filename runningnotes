@@ -14,3 +14,5 @@ show search_path
 set search_path = mytest, public;
 
 set search_path = mytest;
+
+alter user postgres in database employ set search_path = mytest, public
