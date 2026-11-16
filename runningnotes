@@ -40,3 +40,8 @@ CREATE SEQUENCE  test_seq
     CYCLE 
   OWNED BY t5.id 
 
+insert into t5  values (nextval('test_seq'), 'aaa');
+insert into t5  values (nextval('test_seq'),'bbb');
+insert into t5  values (nextval('test_seq'),'ccc');
+insert into t5  values (nextval('test_seq'),'ddd');
+
