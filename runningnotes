@@ -7,3 +7,7 @@ select relfilenode, relpages, reltuples from pg_class where relname = 'emp';
 
 create schema mytest authorization postgres;
 
+create table t1 (id int, name text);
+
+show search_path
+
