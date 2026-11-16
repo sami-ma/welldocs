@@ -16,3 +16,12 @@ set search_path = mytest, public;
 set search_path = mytest;
 
 alter user postgres in database employ set search_path = mytest, public
+
+create table t3 (id serial, name varchar(20));
+
+select * from t3
+
+insert into t3 (name) values ('aaa');
+insert into t3 (name) values ('bbb');
+insert into t3 (name) values ('ccc');
+insert into t3 (name) values ('ddd');
